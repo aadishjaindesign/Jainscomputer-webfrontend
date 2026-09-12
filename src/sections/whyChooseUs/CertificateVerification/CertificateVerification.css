@@ -1,0 +1,538 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500;600;700;800;900&display=swap'); */
+
+.cv-section {
+  padding: 80px 24px;
+  background: #ffffff;
+  font-family: 'Host Grotesk', sans-serif;
+  box-sizing: border-box;
+}
+
+.cv-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 26px;
+  align-items: start;
+}
+
+/* ================================
+   LEFT
+================================ */
+.cv-left {
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid #ebebeb;
+}
+
+/* HEADER */
+.cv-header {
+  background: #e31c1c;
+  padding: 32px 36px;
+  color: #fff;
+}
+
+.cv-header h2 {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 0 8px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.3;
+}
+
+.cv-header-icon-inline {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.cv-header p {
+  font-size: 14px;
+  opacity: 0.9;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* BOX */
+.cv-box {
+  padding: 32px 36px 28px;
+}
+
+.cv-box-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #555;
+  margin: 0 0 20px;
+}
+
+/* ================================
+   OTP — 2 GROUPS
+================================ */
+.cv-otp-wrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.cv-otp-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cv-group-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  color: #aaa;
+  text-transform: uppercase;
+}
+
+.cv-otp-row {
+  display: flex;
+  gap: 10px;
+}
+
+.cv-otp-sep {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ccc;
+  line-height: 1;
+  padding-bottom: 8px;
+  flex-shrink: 0;
+}
+
+.cv-otp-input {
+  width: 68px;
+  height: 68px;
+  border: 2px solid #e31c1c;
+  border-radius: 14px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  font-family: 'Host Grotesk', sans-serif;
+  color: #e31c1c;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  box-sizing: border-box;
+  caret-color: #e31c1c;
+}
+
+.cv-otp-input::placeholder {
+  color: #ddd;
+  font-size: 18px;
+}
+
+.cv-otp-input:focus {
+  border-color: #b90e0e;
+  box-shadow: 0 0 0 4px rgba(227, 28, 28, 0.12);
+}
+
+.cv-otp-input.cv-otp-err {
+  border-color: #e31c1c;
+  background: #fff5f5;
+  color: #e31c1c;
+}
+
+.cv-otp-input.cv-otp-ok {
+  border-color: #17a34a;
+  background: #f0fdf4;
+  color: #17a34a;
+}
+
+.cv-error-msg {
+  font-size: 13px;
+  color: #e31c1c;
+  font-weight: 500;
+  margin: 12px 0 0;
+  background: #fff5f5;
+  border-radius: 10px;
+  padding: 10px 14px;
+  border: 1px solid #fcc;
+}
+
+/* BUTTON */
+.cv-btn-verify {
+  width: 100%;
+  height: 56px;
+  border: none;
+  border-radius: 14px;
+  background: #e31c1c;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Host Grotesk', sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.cv-btn-verify:hover:not(:disabled) {
+  background: #c41818;
+  transform: translateY(-1px);
+}
+
+.cv-btn-verify:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ================================
+   RESULT
+================================ */
+.cv-result {
+  border-top: 1px solid #e8f5ec;
+}
+
+.cv-result-top {
+  background: #e8f7ed;
+  padding: 22px 36px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.cv-check-icon {
+  font-size: 28px;
+  color: #17a34a;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.cv-result-top h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 800;
+  color: #14532d;
+}
+
+.cv-result-top p {
+  margin: 0;
+  font-size: 13px;
+  color: #166534;
+}
+
+/* ================================
+   MAIN INFO GRID — 2 col, 3 rows
+   Row 1: Student Name | Father Name
+   Row 2: Enrollment No | Course
+   Row 3: Course Duration | Course Issue Date
+================================ */
+.cv-result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  padding: 24px 36px 20px;
+}
+
+.cv-result-cell {
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 14px 16px;
+  border: 1px solid #ebebeb;
+}
+
+/* Remove full-width span — Course Duration now shares row with Issue Date */
+.cv-cell-full {
+  grid-column: span 1;
+}
+
+.cv-cell-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #999;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.cv-cell-label svg {
+  font-size: 12px;
+  color: #e31c1c;
+}
+
+.cv-result-cell strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.35;
+  display: block;
+}
+
+/* Internship Yes/No colors */
+.cv-status-yes { color: #16a34a; }
+.cv-status-no  { color: #e31c1c; }
+
+/* ================================
+   INTERNSHIP SECTION
+   Row 1: Internship | Internship Duration
+   Row 2: Issue Date | Verify Another btn
+================================ */
+.cv-internship-section {
+  padding: 0 36px 24px;
+}
+
+.cv-internship-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  color: #aaa;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.cv-internship-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* Issue Date — bottom left (col 1, row 2) */
+.cv-intern-date {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+/* ================================
+   VERIFY ANOTHER — inline in internship grid
+   Positioned at col 2, row 2 — same cell shape as info boxes
+================================ */
+.cv-another-wrap {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  align-items: stretch;
+}
+
+.cv-btn-another {
+  width: 100%;
+  height: 100%;
+  min-height: 64px;
+  border: 2px solid #e31c1c;
+  border-radius: 12px;
+  background: #fff;
+  color: #e31c1c;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Host Grotesk', sans-serif;
+  cursor: pointer;
+  /* display: flex; */
+  align-items: center;
+  justify-content: right;
+  gap: 8px;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+  padding: 14px 16px;
+  box-sizing: border-box;
+}
+
+.cv-btn-another:hover {
+  background: #e31c1c;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.cv-btn-another svg {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* ================================
+   RIGHT
+================================ */
+.cv-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cv-info-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 28px 30px;
+  border: 1px solid #ebebeb;
+}
+
+.cv-card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.cv-card-title-icon {
+  font-size: 18px;
+  color: #e31c1c;
+}
+
+.cv-info-card h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: #111;
+  margin: 0;
+}
+
+/* STEPS */
+.cv-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cv-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.cv-step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #e31c1c;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.cv-steps li strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.cv-steps li p {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* TRUST LIST */
+.cv-trust-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.cv-trust-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.cv-check-li {
+  font-size: 15px;
+  color: #17a34a;
+  flex-shrink: 0;
+}
+
+/* ================================
+   RESPONSIVE — 1200px
+================================ */
+@media (max-width: 1200px) {
+  .cv-container { grid-template-columns: 1.4fr 1fr; }
+}
+
+/* ================================
+   RESPONSIVE — 992px
+================================ */
+@media (max-width: 992px) {
+  .cv-section { padding: 64px 20px; }
+  .cv-container { grid-template-columns: 1fr; gap: 20px; }
+}
+
+/* ================================
+   RESPONSIVE — 768px
+================================ */
+@media (max-width: 768px) {
+  .cv-section { padding: 50px 16px; }
+  .cv-header { padding: 26px 24px; }
+  .cv-header h2 { font-size: 20px; }
+  .cv-box { padding: 26px 24px 22px; }
+  .cv-otp-input { width: 58px; height: 60px; font-size: 24px; }
+  .cv-result-top { padding: 18px 24px; }
+  .cv-result-grid { padding: 18px 24px 16px; gap: 12px; }
+  .cv-internship-section { padding: 0 24px 20px; }
+  .cv-info-card { padding: 24px 22px; }
+}
+
+/* ================================
+   RESPONSIVE — 600px
+================================ */
+@media (max-width: 600px) {
+  .cv-result-grid { grid-template-columns: 1fr; }
+  .cv-cell-full { grid-column: span 1; }
+  .cv-internship-grid { grid-template-columns: 1fr; }
+  .cv-intern-date { grid-column: 1; grid-row: auto; }
+  .cv-another-wrap { grid-column: 1; grid-row: auto; }
+  .cv-btn-another { min-height: 52px; }
+}
+
+/* ================================
+   RESPONSIVE — 480px
+================================ */
+@media (max-width: 480px) {
+  .cv-section { padding: 40px 12px; }
+  .cv-header { padding: 20px 18px; }
+  .cv-header h2 { font-size: 17px; }
+  .cv-box { padding: 22px 18px 18px; }
+  .cv-otp-wrapper { gap: 8px; }
+  .cv-otp-row { gap: 8px; }
+  .cv-otp-input { width: 52px; height: 54px; font-size: 22px; border-radius: 12px; }
+  .cv-otp-sep { font-size: 26px; }
+  .cv-btn-verify { height: 50px; font-size: 15px; }
+  .cv-result-top { padding: 16px 18px; }
+  .cv-result-grid { padding: 14px 18px 14px; gap: 10px; }
+  .cv-internship-section { padding: 0 18px 18px; }
+  .cv-info-card { padding: 20px 16px; border-radius: 18px; }
+}
+
+/* ================================
+   RESPONSIVE — 360px
+================================ */
+@media (max-width: 360px) {
+  .cv-section { padding: 32px 10px; }
+  .cv-header h2 { font-size: 15px; }
+  .cv-header p { font-size: 12px; }
+  .cv-otp-row { gap: 6px; }
+  .cv-otp-input { width: 46px; height: 48px; font-size: 18px; border-radius: 10px; }
+  .cv-otp-sep { font-size: 22px; }
+  .cv-btn-verify { height: 46px; font-size: 14px; border-radius: 12px; }
+  .cv-box-label { font-size: 11px; }
+  .cv-result-cell strong { font-size: 13px; }
+  .cv-cell-label { font-size: 10px; }
+  .cv-info-card h3 { font-size: 15px; }
+  .cv-steps li strong { font-size: 13px; }
+  .cv-steps li p, .cv-trust-list li { font-size: 12px; }
+}

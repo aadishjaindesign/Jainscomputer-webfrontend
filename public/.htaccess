@@ -1,0 +1,110 @@
+# =====================================
+# SECURITY HEADERS
+# =====================================
+<IfModule mod_headers.c>
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+</IfModule>
+
+
+
+
+RewriteEngine On
+RewriteBase /
+
+# =====================================
+
+# FORCE HTTPS + REMOVE WWW
+
+# =====================================
+
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\.jainscomputer\.com$ [NC]
+RewriteRule ^(.*)$ https://jainscomputer.com/$1 [R=301,L]
+
+
+
+# =====================================
+
+# OLD PHP URL REDIRECTS
+
+# =====================================
+
+Redirect 301 /videoediting.php /courses/video-editing/
+Redirect 301 /digitalmarketing.php /courses/digital-marketing/
+Redirect 301 /graphicdesigning.php /courses/graphic-designing/
+Redirect 301 /webdevelopment.php /courses/website-design/
+Redirect 301 /tally.php /courses/tally-gst/
+Redirect 301 /dataanalytics.php /courses/data-analytics/
+Redirect 301 /govcourses.php /courses/government-courses/
+Redirect 301 /cadcourses.php /courses/cad-courses/
+Redirect 301 /advancedexcel.php /courses/advanced-excel/
+Redirect 301 /personalitydevelopment.php /courses/personality-development/
+Redirect 301 /artificialintelligence.php /courses/artificial-intelligence/
+Redirect 301 /programming.php /courses/programming/
+Redirect 301 /uiux.php /courses/website-design/
+
+# =====================================
+
+# OLD PAGE URLS
+
+# =====================================
+
+Redirect 301 /About-us.php /why-choose-us/
+Redirect 301 /Courses.php /courses/
+Redirect 301 /Contact.php /contact/
+Redirect 301 /Termsandconditions.php /terms-conditions/
+Redirect 301 /Privacypolicy.php /privacy-policy/
+Redirect 301 /Blog /blog/
+Redirect 301 /WhyChooseUs /why-choose-us/
+
+# =====================================
+
+# OTHER OLD URLS
+
+# =====================================
+
+Redirect 301 /about /why-choose-us/
+Redirect 301 /privacypolicy /privacy-policy/
+Redirect 301 /termsandconditions /terms-conditions/
+
+# =====================================
+
+# WRONG URL FIX
+
+# =====================================
+
+Redirect 301 /course/programming /courses/programming/
+
+# =====================================
+
+# REMOVE .PHP EXTENSION
+
+# =====================================
+
+RewriteCond %{THE_REQUEST} \s/+(.+?).php[\s?] [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# =====================================
+
+# NEXT.JS STATIC EXPORT SUPPORT
+
+# =====================================
+
+DirectoryIndex index.html
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}/index.html -f
+RewriteRule ^(.*)$ $1/index.html [L]
+
+# =====================================
+
+# INVALID URLS => 404
+
+# =====================================
+
+ErrorDocument 404 /404.html

@@ -1,0 +1,214 @@
+.herocta-container {
+  width: calc(100% - 32px);
+  max-width: 1210px;
+  margin: 60px auto;
+  padding: 60px 32px;
+  background: linear-gradient(90deg, #E31C1C 0%, #991B1B 100%);
+  border-radius: 24px;
+  text-align: center;
+  color: #fff;
+  font-family: 'Host Grotesk', sans-serif;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.herocta-content {
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.herocta-title {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 14px;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.herocta-description {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 1.7;
+  opacity: 0.92;
+}
+
+.herocta-actions {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.herocta-actions button {
+  min-height: 54px;
+  min-width: 240px;
+  padding: 0 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-family: 'Host Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  outline: none;
+  text-align: center;
+}
+
+.herocta-btn-enroll {
+  background: #fff;
+  color: #E31C1C;
+}
+
+.herocta-btn-view {
+  background: rgba(255,255,255,0.16);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
+.herocta-actions button:hover {
+  transform: translateY(-3px);
+}
+
+/* =========================
+   1200px
+========================= */
+@media (max-width: 1200px) {
+
+  .herocta-container {
+    width: calc(100% - 40px);
+    padding: 52px 28px;
+  }
+
+  .herocta-title {
+    font-size: 34px;
+  }
+}
+
+/* =========================
+   992px
+========================= */
+@media (max-width: 992px) {
+
+  .herocta-container {
+    width: calc(100% - 32px);
+    padding: 46px 24px;
+    border-radius: 20px;
+  }
+
+  .herocta-title {
+    font-size: 30px;
+  }
+
+  .herocta-description {
+    font-size: 14px;
+  }
+
+  .herocta-actions button {
+    min-width: 220px;
+    min-height: 50px;
+    font-size: 14px;
+  }
+}
+
+/* =========================
+   768px
+========================= */
+@media (max-width: 768px) {
+
+  .herocta-container {
+    width: calc(100% - 24px);
+    margin: 40px auto;
+    padding: 40px 20px;
+    border-radius: 18px;
+  }
+
+  .herocta-title {
+    font-size: 26px;
+  }
+
+  .herocta-description {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .herocta-actions {
+    gap: 12px;
+  }
+
+  .herocta-actions button {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* =========================
+   480px
+========================= */
+@media (max-width: 480px) {
+
+  .herocta-container {
+    width: calc(100% - 20px);
+    padding: 34px 16px;
+    border-radius: 16px;
+  }
+
+  .herocta-title {
+    font-size: 22px;
+    line-height: 1.35;
+  }
+
+  .herocta-description {
+    font-size: 13px;
+  }
+
+  .herocta-actions {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .herocta-actions button {
+    width: 100%;
+    max-width: 100%;
+    min-height: 48px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+}
+
+/* =========================
+   360px
+========================= */
+@media (max-width: 360px) {
+
+  .herocta-container {
+    padding: 28px 14px;
+  }
+
+  .herocta-title {
+    font-size: 19px;
+  }
+
+  .herocta-description {
+    font-size: 12px;
+  }
+
+  .herocta-actions button {
+    min-height: 44px;
+    font-size: 13px;
+  }
+}
+
+/* =========================
+   Reduced Motion
+========================= */
+@media (prefers-reduced-motion: reduce) {
+
+  .herocta-actions button {
+    transition: none;
+  }
+}

@@ -1,0 +1,182 @@
+.wa-section {
+  padding: 80px 40px;
+  background: #ffffff;
+  font-family: 'Host Grotesk', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wa-header {
+  margin-bottom: 50px;
+}
+
+.wa-header h2 {
+  font-size: 48px;
+  font-weight: 900;
+  color: #111;
+  margin: 0 0 16px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.wa-header h2 span { color: #E31C1C; }
+
+/* AFTER */
+.wa-desc {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.7;
+  max-width: 900px;
+  margin: 10px auto 0;   
+  text-align: center;
+}
+
+/* ROW */
+.wa-row {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* LEFT CARD — bada */
+.wa-card-left {
+  flex: 1.1;
+  background: #E31C1C;
+  border-radius: 20px;
+  padding: 40px 36px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-self: flex-end;
+}
+
+.wa-card-left p {
+  font-size: 16px;
+  line-height: 1.75;
+  opacity: 0.96;
+  margin: 0;
+}
+
+.wa-line {
+  width: 60px;
+  height: 3px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 2px;
+}
+
+.wa-btn {
+  background: #fff;
+  color: #E31C1C;
+  border: none;
+  padding: 13px 26px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Host Grotesk', sans-serif;
+  transition: 0.3s;
+  width: fit-content;
+}
+
+.wa-btn:hover {
+  background: #FCECEC;
+  transform: translateY(-2px);
+}
+
+/* RIGHT COLUMN */
+.wa-right-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: flex-end;
+}
+
+/* "Build Future Careers" — floating top right */
+.wa-card-small {
+  background: #E31C1C;
+  color: #fff;
+  border-radius: 12px;
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  width: fit-content;
+  align-self: flex-end;
+}
+
+.wa-card-small p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* Right big card — thoda left se andar */
+.wa-card-right {
+  background: #E31C1C;
+  border-radius: 20px;
+  padding: 36px 32px;
+  color: #fff;
+  width: 100%;
+  margin-left: 30px;
+}
+
+.wa-card-right p {
+  font-size: 15px;
+  line-height: 1.75;
+  opacity: 0.96;
+  margin: 0;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1024px) {
+  .wa-section { padding: 60px 30px; }
+  .wa-header h2 { font-size: 38px; }
+  .wa-card-right { margin-left: 16px; }
+}
+
+@media (max-width: 768px) {
+  .wa-section { padding: 50px 20px; }
+  .wa-header h2 { font-size: 28px; }
+  .wa-desc { font-size: 14px; }
+
+  .wa-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .wa-card-left { padding: 28px 24px; }
+  .wa-card-right { margin-left: 0; padding: 28px 24px; }
+  .wa-card-small { align-self: flex-start; }
+
+  .wa-card-left p,
+  .wa-card-right p { font-size: 14px; }
+}
+
+@media (max-width: 480px) {
+  .wa-section { padding: 40px 16px; }
+  .wa-header h2 { font-size: 22px; }
+
+  .wa-card-left { padding: 22px 18px; gap: 18px; }
+  .wa-card-right { padding: 22px 18px; }
+
+  .wa-card-left p,
+  .wa-card-right p { font-size: 13px; }
+
+  .wa-btn { width: 100%; text-align: center; }
+}
+
+@media (max-width: 360px) {
+  .wa-header h2 { font-size: 19px; }
+  .wa-card-left p,
+  .wa-card-right p { font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wa-btn { transition: none; }
+}

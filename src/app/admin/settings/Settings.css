@@ -1,0 +1,146 @@
+.settings-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 36px 40px;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #eee;
+}
+
+.settings-card h3 {
+  font-family: 'Host Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 6px;
+}
+
+.settings-card>p {
+  font-size: 14px;
+  color: #888;
+  margin: 0 0 28px;
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.field-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.field-group input {
+  padding: 12px 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: 'Host Grotesk', sans-serif;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  color: #000000;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.field-group input:focus {
+  border-color: #E31C1C;
+  box-shadow: 0 0 0 3px rgba(227, 28, 28, 0.08);
+}
+
+.settings-msg {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin: 0;
+}
+
+.msg-error {
+  background: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.msg-success {
+  background: #dcfce7;
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
+}
+
+.update-btn {
+  background: #E31C1C;
+  color: white;
+  border: none;
+  padding: 13px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Host Grotesk', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 4px 12px rgba(227, 28, 28, 0.25);
+  width: 100%;
+}
+
+.update-btn:hover:not(:disabled) {
+  background: #c41818;
+  transform: translateY(-1px);
+}
+
+.update-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+  .settings-card {
+    padding: 28px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .settings-card {
+    padding: 24px 16px;
+    border-radius: 12px;
+  }
+
+  .settings-card h3 {
+    font-size: 16px;
+  }
+
+  .update-btn {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .field-group input {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 360px) {
+  .settings-card {
+    padding: 20px 14px;
+  }
+
+  .settings-card h3 {
+    font-size: 15px;
+  }
+}
