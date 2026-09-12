@@ -1,0 +1,100 @@
+.ty-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.ty-box {
+  position: relative;
+  background: #fff0f0;
+  border-radius: 24px;
+  width: 300px;
+  min-height: 302px;
+  padding: 32px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ty-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.ty-icon {
+  margin-bottom: 16px;
+}
+
+.ty-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #e53935;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 10px #ffcdd2;
+}
+
+.ty-circle svg {
+  width: 40px;
+  height: 40px;
+}
+
+.ty-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 8px;
+}
+
+.ty-title span {
+  color: #e53935;
+}
+
+.ty-divider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.ty-divider span {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #ccc;
+  border-radius: 2px;
+}
+
+.ty-heart {
+  color: #e53935;
+  font-size: 14px;
+  width: auto !important;
+  height: auto !important;
+  background: none !important;
+}
+
+.ty-msg {
+  font-size: 14px;
+  color: #444;
+  margin: 2px 0;
+  line-height: 1.5;
+}

@@ -1,0 +1,742 @@
+
+
+/* ================================
+   FAQ SECTION
+================================ */
+.faq-sections {
+  padding: 0px 20px;
+  font-family: 'Host Grotesk', sans-serif;
+  margin-top: 50px;
+}
+
+.faq-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 auto 12px;
+  position: relative;
+  color: #E31C1C;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.faq-tag::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background: #E31C1C;
+  border-radius: 50%;
+  animation: blink 1s infinite;
+
+  position: static;
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.faq-header h2 {
+  font-size: 38px;
+  font-weight: 900;
+  margin: 0;
+  line-height: 1.2;
+}
+.faq-header h2 span {
+  color: #E31C1C;
+}
+
+.faq-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: 'Host Grotesk', sans-serif;
+}
+
+.faq-questions {
+  display: flex;
+  align-items: center;
+  padding: 18px 20px;
+  cursor: pointer;
+  gap: 20px;
+  background: #FFF5F5;
+  border-radius: 12px;
+  font-family: 'Host Grotesk', sans-serif;
+  min-height: 60px;
+}
+
+.faq-questions p {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 500;
+  color: #111;
+  margin: 0;
+  font-family: 'Host Grotesk', sans-serif;
+}
+
+.faq-arrow {
+  color: #111;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.faq-arrow.rotate {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.faq-answer.show {
+  max-height: 200px;
+  padding: 0 20px 16px 20px;
+  font-family: 'Host Grotesk', sans-serif;
+}
+
+/* ================================
+   CURRICULUM
+================================ */
+.course-curriculum {
+  background: #FFF5F5;
+  padding: 80px 20px;
+  font-family: 'Host Grotesk', sans-serif;
+}
+
+.curriculum-header {
+  max-width: 1240px;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+.mini-tag {
+  color: #E31C1C;
+  font-size: 13px;
+  margin-bottom: 0px;
+}
+
+.curriculum-header h2 {
+  font-size: 45px;
+  font-weight: 900;
+  font-family: 'Host Grotesk', sans-serif;
+}
+
+.curriculum-header span {
+  color: #E31C1C;
+}
+
+.desc {
+  color: #666;
+  margin-top: 0px;
+  width: 750px;
+}
+
+.curriculum-wrapper {
+  max-width: 1240px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.curriculum-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.faq-questione {
+  height: 49px;
+  background: #fff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  cursor: pointer;
+  gap: 20px;
+  margin-bottom: 17px;
+}
+
+.number {
+  width: 30px;
+  height: 30px;
+  background: #FDECEC;
+  color: #E31C1C;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.faq-questione p {
+  flex: 1;
+  font-size: 16px;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  background: #F5F5F5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.curriculum-right {
+  width: 447px;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.curriculum-right .tope {
+  background: linear-gradient(135deg, #E31C1C, #991B1B);
+  color: #fff;
+  padding: 20px;
+  height: 162px;
+  line-height: 0.8;
+}
+
+.curriculum-right .tope h3 {
+  font-size: 22px;
+  font-weight: 800;
+  margin-top: 30px;
+  font-family: 'Host Grotesk', sans-serif;
+  margin-bottom: 20px;
+}
+
+.curriculum-right .tope span {
+  font-size: 13px;
+  line-height: 1;
+}
+/* .tope{
+  background: linear-gradient(135deg,#e31c1c,#b30000);
+  padding: 32px 28px;
+  border-radius: 24px 24px 0 0;
+  color: white;
+} */
+
+/* .tope p{
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 0px;
+} */
+/* 
+.tope h3{
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  font-weight: 700;
+} */
+
+/* .tope span{
+  display: block;
+  font-size: 17px;
+  line-height: 1.7;
+  opacity: .95;
+} */
+
+.list {
+  padding: 20px;
+}
+
+.list p {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.curriculum-right input {
+  width: calc(100% - 40px);
+  margin: 10px 20px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.download-btn {
+  width: calc(100% - 40px);
+  margin: 10px 20px;
+  height: 44px;
+  background: #E31C1C;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Host Grotesk', sans-serif;
+  transition: 0.3s;
+}
+
+.download-btn:hover {
+  background: #C11818;
+}
+
+.curriculum-right small {
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #888;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0px;
+}
+
+.check-icon {
+  width: 22px;
+  height: 22px;
+  background: #DCFCE7;
+  color: #20B823;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.list-item p {
+  font-size: 14px;
+  color: #111;
+}
+
+.faq-answer-content ul {
+  margin-left: 20px;
+  padding-left: 15px;
+  list-style: disc;
+}
+
+.faq-answer-content li {
+  margin-bottom: 6px;
+}
+
+/* ================================
+   CTA
+================================ */
+.contact-cta {
+  background: linear-gradient(135deg, #E31C1C, #991B1B);
+  border-radius: 20px;
+  padding: 50px 40px;
+  text-align: center;
+  max-width: 1240px;
+  margin: 80px auto;
+  font-family: 'Host Grotesk', sans-serif;
+}
+
+.contact-cta h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+  word-break: break-word;
+}
+
+.contact-cta p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  margin-bottom: 24px;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-cta button {
+  background: #fff;
+  color: #E31C1C;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Host Grotesk', sans-serif;
+  transition: 0.3s;
+}
+
+.contact-cta button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+/* 1024px Tablet */
+@media (max-width: 1024px) {
+ 
+
+ 
+
+ 
+
+  .curriculum-header h2 {
+    font-size: 38px;
+  }
+
+  .curriculum-right {
+    width: 360px;
+  }
+
+  .contact-cta {
+    margin: 60px 20px;
+  }
+
+  .faq-header h2 {
+    font-size: 32px;
+  }
+body {
+  font-family: 'Host Grotesk', sans-serif;
+}
+}
+
+/* 768px Tablet Portrait */
+@media (max-width: 768px) {
+  * {
+    font-family: 'Host Grotesk', sans-serif;
+  }
+
+ 
+
+ 
+
+  .course-capsule {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .course-capsule img {
+    width: 32px;
+    height: 32px;
+    margin-left: -8px;
+  }
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+  .curriculum-wrapper {
+    flex-direction: column;
+  }
+
+  .curriculum-right {
+    width: 100%;
+  }
+
+  .curriculum-header h2 {
+    font-size: 30px;
+  }
+
+  .faq-header h2 {
+    font-size: 26px;
+  }
+
+  .faq-questions p {
+    font-size: 14px;
+  }
+
+  .contact-cta {
+    padding: 40px 20px;
+    border-radius: 16px;
+    margin: 40px 16px;
+  }
+
+  .contact-cta h2 {
+    font-size: 24px;
+  }
+
+  /* 
+  .digital-marketing .cap-1 {
+    top: 80px;
+    left: -20px;
+    width: 80px;
+    height: 36px;
+  }
+
+  .digital-marketing .cap-2 {
+    top: 10px;
+    right: 20px;
+    width: 80px;
+    height: 36px;
+  }
+
+  .digital-marketing .cap-3 {
+    bottom: 100px;
+    right: -20px;
+    width: 80px;
+    height: 36px;
+  }
+
+  .digital-marketing .course-capsule img {
+    width: 55px;
+    height: 36px;
+    margin-left: -18px;
+  } */
+}
+
+/* 480px Mobile */
+@media (max-width: 480px) {
+  
+
+ 
+
+ 
+
+  
+
+ 
+
+ 
+
+ 
+
+
+
+  /* RIGHT SIDE — sabhi phones pe hide */
+ 
+
+  /* CURRICULUM */
+  .course-curriculum {
+    padding: 40px 14px;
+  }
+
+  .curriculum-header h2 {
+    font-size: 22px;
+  }
+
+  .desc {
+    font-size: 13px;
+    margin-top: 0px;
+    width: 100%;
+  }
+
+  .faq-questione {
+    height: auto;
+    padding: 10px 12px;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .faq-questione p {
+    font-size: 13px;
+  }
+
+  .curriculum-wrapper {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+
+  .curriculum-right {
+    width: 100%;
+  }
+
+  .curriculum-right .tope {
+    height: auto;
+    padding: 16px;
+  }
+
+  .list p {
+    font-size: 13px;
+  }
+
+  .download-btn {
+    height: 40px;
+    font-size: 14px;
+  }
+
+  /* FAQ */
+  .faq-sections {
+    padding: 20px 14px;
+  }
+
+  .faq-tag {
+    margin-left: 0;
+    margin-bottom: -10px;
+  }
+
+  .faq-header h2 {
+    font-size: 24px;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .faq-list {
+    gap: 10px;
+  }
+
+  .faq-questions {
+    min-height: auto;
+    padding: 12px 14px;
+    gap: 10px;
+    border-radius: 10px;
+  }
+
+  .faq-questions p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .faq-arrow {
+    font-size: 12px;
+  }
+
+  /* CTA */
+  .contact-cta {
+    padding: 30px 16px;
+    margin: 30px 10px;
+    border-radius: 14px;
+  }
+
+  .contact-cta h2 {
+    font-size: 18px;
+  }
+
+  .contact-cta p {
+    font-size: 13px;
+  }
+
+  .contact-cta button {
+    width: 100%;
+    font-size: 14px;
+    height: 50px;
+  }
+}
+
+/* 360px Small Mobile */
+@media (max-width: 360px) {
+
+
+ 
+
+  .curriculum-header h2 {
+    font-size: 20px;
+  }
+
+  .contact-cta h2 {
+    font-size: 16px;
+  }
+
+  .faq-questions p {
+    font-size: 12px;
+  }
+
+  .faq-header h2 {
+    font-size: 20px;
+  }
+}
+/* =========================================
+   TABLET FIXES (481px - 780px)
+========================================= */
+
+@media (min-width: 481px) and (max-width: 780px) {
+
+ 
+
+
+  
+
+  
+
+
+  /* FAQ FIX */
+  .faq-tag {
+    margin-left: 0;
+  }
+
+  .faq-header h2 {
+    margin-left: 0;
+    text-align: center;
+    font-size: 34px;
+    line-height: 1.3;
+  }
+
+  .faq-list {
+    max-width: 100%;
+  }
+
+  .faq-questions {
+    padding: 16px;
+  }
+
+  .faq-questions p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  /* CURRICULUM */
+  .curriculum-header h2 {
+    font-size: 36px;
+    line-height: 1.3;
+  }
+
+  .desc {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 10px;
+  }
+
+  /* BUTTONS */
+ 
+
+  /* FIX LONG TEXT */
+  p,
+  h1,
+  h2,
+  h3,
+  span {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+}
+@media (min-width: 1020px) and (max-width: 1300px) {
+
+ 
+
+  .curriculum-wrapper {
+    gap: 24px;
+  }
+
+  .curriculum-right {
+    width: 360px;
+  }
+
+  .faq-header {
+    text-align: center;
+  }
+
+  .faq-tag {
+    margin: 0 auto 12px;
+  }
+
+  .faq-header h2 {
+    margin: 0;
+    font-size: 34px;
+  }
+
+}

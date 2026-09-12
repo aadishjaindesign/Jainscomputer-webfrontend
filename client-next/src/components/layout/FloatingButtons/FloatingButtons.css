@@ -1,0 +1,50 @@
+.floating-buttons{
+  position: fixed;
+  right: 18px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 999;
+}
+
+.call-btn,
+.whatsapp-btn{
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  transition: transform 0.3s ease;
+}
+
+.call-btn:hover,
+.whatsapp-btn:hover{
+  transform: scale(1.08);
+}
+
+.call-btn img,
+.whatsapp-btn img{
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .floating-buttons{
+    right: 12px;
+    bottom: 16px;
+    gap: 10px;
+  }
+
+  .call-btn,
+  .whatsapp-btn{
+    width: 54px;
+    height: 54px;
+  }
+
+}

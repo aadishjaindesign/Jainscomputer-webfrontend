@@ -1,0 +1,262 @@
+.sd-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(2px);
+  animation: sdFadeIn 0.2s ease;
+}
+
+@keyframes sdFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.sd-modal {
+  background: #fff;
+  border-radius: 16px;
+  width: 95%;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  animation: sdSlideUp 0.25s ease;
+}
+
+@keyframes sdSlideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.sd-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #f0f0f0;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 2;
+  border-radius: 16px 16px 0 0;
+}
+
+.sd-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.sd-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+  font-family: 'Host Grotesk', sans-serif;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.sd-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 2px;
+}
+
+.sd-subtitle {
+  font-size: 12px;
+  color: #888;
+  font-weight: 500;
+}
+
+.sd-close {
+  background: #f5f5f5;
+  border: none;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.sd-close:hover {
+  background: #fee2e2;
+  color: #E31C1C;
+}
+
+.sd-body {
+  padding: 24px;
+}
+
+.sd-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.sd-stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 8px;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  background: #fafafa;
+}
+
+.sd-stat-card--primary .sd-stat-value { color: #E31C1C; }
+.sd-stat-card--green .sd-stat-value { color: #16a34a; }
+.sd-stat-card--emerald .sd-stat-value { color: #059669; }
+.sd-stat-card--red .sd-stat-value { color: #dc2626; }
+.sd-stat-card--blue .sd-stat-value { color: #0284c7; }
+.sd-stat-card--purple .sd-stat-value { color: #8b5cf6; }
+.sd-stat-card--amber .sd-stat-value { color: #f59e0b; }
+
+.sd-stat-value {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.sd-stat-label {
+  font-size: 10px;
+  color: #888;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sd-last-activity {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 20px;
+  padding: 10px 14px;
+  background: #fafafa;
+  border-radius: 8px;
+}
+
+.sd-recent-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 14px;
+}
+
+.sd-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  gap: 12px;
+  color: #888;
+}
+
+.sd-spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid #eee;
+  border-top-color: #E31C1C;
+  border-radius: 50%;
+  animation: sdSpin 0.8s linear infinite;
+}
+
+@keyframes sdSpin {
+  to { transform: rotate(360deg); }
+}
+
+.sd-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  gap: 8px;
+  color: #aaa;
+}
+
+.sd-empty span {
+  font-size: 28px;
+}
+
+.sd-activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sd-activity-item {
+  padding: 12px 14px;
+  border: 1px solid #f0f0f0;
+  border-radius: 10px;
+  transition: box-shadow 0.2s;
+}
+
+.sd-activity-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.sd-activity-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  gap: 8px;
+}
+
+.sd-activity-lead {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111;
+}
+
+.sd-activity-time {
+  font-size: 11px;
+  color: #999;
+  white-space: nowrap;
+}
+
+.sd-activity-status {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.sd-activity-notes {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 768px) {
+  .sd-modal { width: 98%; }
+  .sd-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .sd-stat-value { font-size: 20px; }
+  .sd-body { padding: 16px; }
+  .sd-header { padding: 16px; }
+}
+
+@media (max-width: 480px) {
+  .sd-avatar { width: 40px; height: 40px; font-size: 16px; }
+  .sd-name { font-size: 16px; }
+}

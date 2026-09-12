@@ -1,0 +1,455 @@
+/* =============================================
+   WhyHero — Clean, no background
+   Accent: #E31C1C
+============================================= */
+
+/* ── OUTER WRAPPER — full width centering ── */
+.ws-hero-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+}
+
+/* ── SECTION ── */
+.ws-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 20px 20px;
+  font-family: 'Host Grotesk', sans-serif;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── LEFT ── */
+.ws-left {
+  flex: 1;
+  max-width: 500px;
+  position: relative;
+  z-index: 1;
+}
+
+.ws-breadcrumb {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.ws-breadcrumb span {
+  color: #E31C1C;
+  font-weight: 600;
+}
+
+/* Blinking badge */
+.ws-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFF5F5;
+  color: #E31C1C;
+  border: 1px solid rgba(227, 28, 28, 0.2);
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin: 12px 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.ws-tag::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #E31C1C;
+  border-radius: 50%;
+  animation: ws-blink 1s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes ws-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.25; }
+}
+
+/* ── HEADING ── */
+.ws-left h1 {
+  font-size: 48px;
+  font-weight: 900;
+  margin-top: -10px;
+  line-height: 1.2;
+  color: #111;
+  letter-spacing: -0.5px;
+}
+
+.ws-left h1 span {
+  color: #E31C1C;
+}
+
+/* ── DESC ── */
+.ws-desc {
+  margin-top: 10px;
+  color: #555;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ── CTA BUTTON ── */
+.ws-btn {
+  margin-top: 28px;
+  padding: 13px 22px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  font-family: 'Host Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #111;
+}
+
+.ws-btn:hover {
+  border-color: #E31C1C;
+  color: #E31C1C;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(227, 28, 28, 0.12);
+}
+
+/* =============================================
+   RIGHT — 3 COLUMN VERTICAL SCROLL
+============================================= */
+.ws-right {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  height: 480px;
+  overflow: hidden;
+  max-width: 580px;
+  position: relative;
+  z-index: 1;
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 12%,
+    black 88%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 12%,
+    black 88%,
+    transparent
+  );
+}
+
+/* ── EACH COLUMN ── */
+.ws-col {
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+
+/* ── TRACKS ── */
+.ws-track {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  will-change: transform;
+}
+
+.ws-track--up {
+  animation: ws-scrollUp 40s linear infinite;
+  transition: animation-play-state 0.4s ease;
+}
+
+.ws-track--down {
+  animation: ws-scrollDown 40s linear infinite;
+  transition: animation-play-state 0.4s ease;
+}
+
+.ws-track--slow {
+  animation: ws-scrollUp 40s linear infinite;
+  transition: animation-play-state 0.4s ease;
+}
+
+.ws-col:hover .ws-track--up,
+.ws-col:hover .ws-track--down,
+.ws-col:hover .ws-track--slow {
+  animation-play-state: paused;
+}
+
+@keyframes ws-scrollUp {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
+}
+
+@keyframes ws-scrollDown {
+  from { transform: translateY(-50%); }
+  to   { transform: translateY(0); }
+}
+
+/* =============================================
+   CARD
+============================================= */
+.ws-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  cursor: pointer;
+  transform-style: preserve-3d;
+ 
+  /* 3D tilt by default */
+  transform: perspective(600px) rotateX(4deg) rotateY(-6deg);
+ 
+  /* Glass border */
+  border: 1px solid rgba(255, 255, 255, 0.18);
+ 
+  /* Glass background */
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+ 
+  /* Deep shadow for 3D lift */
+  box-shadow:
+    0 8px 32px rgba(207, 206, 206, 0.35),
+    0 2px 8px rgba(159, 158, 158, 0.581),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+ 
+  transition:
+    transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+    border-color 0.4s ease;
+}
+ 
+/* Top glass shine streak */
+.ws-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.14),
+    transparent
+  );
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 20px 20px 0 0;
+}
+ 
+/* Bottom fade + diagonal glass sheen */
+.ws-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  pointer-events: none;
+  z-index: 3;
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.1) 40%,
+      transparent 60%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.07) 0%,
+      transparent 55%
+    );
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+ 
+/* ── IMAGE ── */
+.ws-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  border-radius: 12px;
+  filter: brightness(0.9) contrast(1.05) saturate(1.1);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+ 
+/* ── HOVER — full 3D lift ── */
+/* .ws-card:hover {
+  transform: perspective(600px) rotateX(0deg) rotateY(0deg) translateY(-14px) scale(1.04);
+  border-color: rgba(227, 28, 28, 0.5);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.45),
+    0 8px 20px rgba(227, 28, 28, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+} */
+ 
+.ws-card:hover img {
+  /* transform: scale(1.06); */
+  /* filter: brightness(1) contrast(1.05) saturate(1.15); */
+}
+ 
+
+/* =============================================
+   TABLET — ≤ 1024px
+============================================= */
+@media (max-width: 1024px) {
+  .ws-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 20px;
+    gap: 30px;
+    overflow: hidden;
+    margin-top: 0;
+  }
+
+  .ws-left {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .ws-breadcrumb { font-size: 12px; }
+
+  .ws-tag {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .ws-left h1 {
+    font-size: 32px;
+    line-height: 1.3;
+    margin-top: 0;
+  }
+
+  .ws-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+
+  .ws-btn {
+    margin-top: 20px;
+    font-size: 13px;
+  }
+
+  .ws-right {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    overflow: hidden;
+    height: 200px;
+    position: relative;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 8%,
+      black 92%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 8%,
+      black 92%,
+      transparent
+    );
+  }
+
+  .ws-col:nth-child(2),
+  .ws-col:nth-child(3) {
+    display: none !important;
+  }
+
+  .ws-col {
+    width: 100%;
+    overflow: hidden;
+    height: 200px;
+    position: relative;
+  }
+
+  .ws-track--up,
+  .ws-track--down,
+  .ws-track--slow {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 14px;
+    width: max-content;
+    animation: ws-mobileScroll 20s linear infinite !important;
+  }
+
+  .ws-col:hover .ws-track--up,
+  .ws-col:hover .ws-track--down,
+  .ws-col:hover .ws-track--slow {
+    animation-play-state: paused;
+  }
+
+  @keyframes ws-mobileScroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  .ws-card {
+    width: 140px;
+    flex-shrink: 0;
+    border-radius: 14px;
+  }
+
+  .ws-card img {
+    height: 175px;
+    border-radius: 14px;
+  }
+}
+
+/* =============================================
+   SMALL MOBILE — ≤ 480px
+============================================= */
+@media (max-width: 480px) {
+  .ws-hero { padding: 32px 16px; }
+
+  .ws-left h1 { font-size: 24px; }
+
+  .ws-desc { font-size: 13px; }
+
+  .ws-right,
+  .ws-col { height: 175px; }
+
+  .ws-card { width: 120px; }
+
+  .ws-card img { height: 150px; }
+}
+
+/* =============================================
+   EXTRA SMALL — ≤ 360px
+============================================= */
+@media (max-width: 360px) {
+  .ws-hero { padding: 24px 12px; }
+
+  .ws-left h1 { font-size: 20px; }
+
+  .ws-desc { font-size: 12px; }
+
+  .ws-right,
+  .ws-col { height: 160px; }
+
+  .ws-card { width: 108px; }
+
+  .ws-card img { height: 135px; }
+}

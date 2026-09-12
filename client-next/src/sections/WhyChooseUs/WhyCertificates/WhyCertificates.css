@@ -1,0 +1,521 @@
+/* ================================
+   SECTION
+================================ */
+
+.wcert-section {
+  padding: 80px 40px;
+  background: #ffffff;
+  font-family: "Host Grotesk", sans-serif;
+  overflow: hidden;
+}
+
+/* ================================
+   HEADER
+================================ */
+
+.wcert-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.wcert-header h2 {
+  font-size: 42px;
+  font-weight: 900;
+  color: #111;
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+
+.wcert-header p {
+  font-size: 15px;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ================================
+   CARDS WRAPPER
+================================ */
+
+.wcert-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  height: 420px;
+}
+
+/* ================================
+   BASE CARD
+================================ */
+
+.wcert-card {
+  position: absolute;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fcecec;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+  cursor: pointer;
+}
+
+.wcert-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+}
+
+.wcert-card:hover {
+  box-shadow: 0 16px 48px rgba(227, 28, 28, 0.15);
+  z-index: 10 !important;
+}
+
+/* ================================
+   FAR LEFT
+================================ */
+
+.wcert-far-left {
+  width: 160px;
+  height: 280px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(-12deg);
+  z-index: 1;
+  opacity: 0.85;
+}
+
+.wcert-far-left:hover {
+  transform: translateY(-55%) rotate(-8deg) scale(1.04);
+}
+
+/* ================================
+   NEAR LEFT
+================================ */
+
+.wcert-near-left {
+  width: 250px;
+  height: 380px;
+  left: 130px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-6deg);
+  z-index: 2;
+  opacity: 0.92;
+}
+
+.wcert-near-left:hover {
+  transform: translateY(-55%) rotate(-3deg) scale(1.04);
+}
+
+/* ================================
+   CENTER
+================================ */
+
+.wcert-center {
+  width: 300px;
+  height: 450px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  opacity: 1;
+  box-shadow: 0 12px 40px rgba(227, 28, 28, 0.18);
+}
+
+.wcert-center:hover {
+  transform: translate(-50%, -54%) scale(1.04);
+}
+
+/* ================================
+   NEAR RIGHT
+================================ */
+
+.wcert-near-right {
+  width: 250px;
+  height: 380px;
+  right: 130px;
+  top: 50%;
+  transform: translateY(-50%) rotate(6deg);
+  z-index: 2;
+  opacity: 0.92;
+}
+
+.wcert-near-right:hover {
+  transform: translateY(-55%) rotate(3deg) scale(1.04);
+}
+
+/* ================================
+   FAR RIGHT
+================================ */
+
+.wcert-far-right {
+  width: 160px;
+  height: 280px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(12deg);
+  z-index: 1;
+  opacity: 0.85;
+}
+
+.wcert-far-right:hover {
+  transform: translateY(-55%) rotate(8deg) scale(1.04);
+}
+
+/* =========================================
+   POPUP — FIXED
+========================================= */
+
+.wcert-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  padding: 20px;
+  animation: fadePopup 0.3s ease;
+}
+
+/* popup-content sirf image wrap karta hai — koi fixed box nahi */
+.wcert-popup-content {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  animation: zoomPopup 0.3s ease;
+}
+
+/* image apna natural size leti hai, max constraints ke saath */
+.wcert-popup-image {
+  width: auto !important;
+  height: auto !important;
+  max-width: min(90vw, 700px);
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  display: block;
+}
+
+/* CLOSE BUTTON — image ke top-right corner pe */
+.wcert-close-btn {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: #e31c1c;
+  color: #fff;
+  font-size: 26px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.wcert-close-btn:hover {
+  transform: rotate(90deg);
+}
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes fadePopup {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomPopup {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ================================
+   RESPONSIVE — 1024px
+================================ */
+
+@media (max-width: 1024px) {
+  .wcert-section {
+    padding: 60px 30px;
+  }
+
+  .wcert-header h2 {
+    font-size: 34px;
+  }
+
+  .wcert-cards {
+    height: 360px;
+    max-width: 900px;
+  }
+
+  .wcert-far-left {
+    width: 140px;
+    height: 240px;
+  }
+
+  .wcert-near-left {
+    width: 170px;
+    height: 290px;
+    left: 110px;
+  }
+
+  .wcert-center {
+    width: 200px;
+    height: 330px;
+  }
+
+  .wcert-near-right {
+    width: 170px;
+    height: 290px;
+    right: 110px;
+  }
+
+  .wcert-far-right {
+    width: 140px;
+    height: 240px;
+  }
+
+  /* popup responsive */
+  .wcert-popup-image {
+    max-width: min(88vw, 600px);
+    max-height: 82vh;
+  }
+}
+/* ================================
+   RESPONSIVE — 768px
+================================ */
+
+@media (max-width: 768px) {
+
+  .wcert-section {
+    padding: 50px 20px;
+  }
+
+  .wcert-header h2 {
+    font-size: 28px;
+  }
+
+  .wcert-header p {
+    font-size: 13px;
+  }
+
+  .wcert-cards {
+    height: 300px;
+    max-width: 100%;
+  }
+
+  .wcert-far-left {
+    width: 100px;
+    height: 170px;
+    left: 0;
+    transform: translateY(-50%) rotate(-10deg);
+  }
+
+  .wcert-far-left:hover {
+    transform: translateY(-55%) rotate(-7deg) scale(1.04);
+  }
+
+  .wcert-near-left {
+    width: 145px;
+    height: 230px;
+    left: 68px;
+    transform: translateY(-50%) rotate(-5deg);
+  }
+
+  .wcert-near-left:hover {
+    transform: translateY(-55%) rotate(-3deg) scale(1.04);
+  }
+
+  .wcert-center {
+    width: 175px;
+    height: 270px;
+  }
+
+  .wcert-center:hover {
+    transform: translate(-50%, -54%) scale(1.04);
+  }
+
+  .wcert-near-right {
+    width: 145px;
+    height: 230px;
+    right: 68px;
+    transform: translateY(-50%) rotate(5deg);
+  }
+
+  .wcert-near-right:hover {
+    transform: translateY(-55%) rotate(3deg) scale(1.04);
+  }
+
+  .wcert-far-right {
+    width: 100px;
+    height: 170px;
+    right: 0;
+    transform: translateY(-50%) rotate(10deg);
+  }
+
+  .wcert-far-right:hover {
+    transform: translateY(-55%) rotate(7deg) scale(1.04);
+  }
+
+  /* popup */
+  .wcert-popup-overlay {
+    padding: 16px;
+  }
+
+  .wcert-popup-content {
+    max-width: 94vw;
+  }
+
+  .wcert-popup-image {
+    max-width: 90vw;
+    max-height: 80vh;
+    border-radius: 12px;
+  }
+
+  .wcert-close-btn {
+    top: -12px;
+    right: -12px;
+    width: 34px;
+    height: 34px;
+    font-size: 20px;
+  }
+}
+
+/* ================================
+   RESPONSIVE — 480px
+================================ */
+
+@media (max-width: 480px) {
+
+  .wcert-section {
+    padding: 40px 12px;
+  }
+
+  .wcert-header h2 {
+    font-size: 24px;
+  }
+
+  .wcert-cards {
+    height: 260px;
+  }
+
+  .wcert-far-left {
+    width: 80px;
+    height: 145px;
+    left: 0;
+    transform: translateY(-50%) rotate(-10deg);
+  }
+
+  .wcert-near-left {
+    width: 118px;
+    height: 200px;
+    left: 52px;
+    transform: translateY(-50%) rotate(-5deg);
+  }
+
+  .wcert-center {
+    width: 148px;
+    height: 235px;
+  }
+
+  .wcert-near-right {
+    width: 118px;
+    height: 200px;
+    right: 52px;
+    transform: translateY(-50%) rotate(5deg);
+  }
+
+  .wcert-far-right {
+    width: 80px;
+    height: 145px;
+    right: 0;
+    transform: translateY(-50%) rotate(10deg);
+  }
+}
+
+/* ================================
+   RESPONSIVE — 360px
+================================ */
+
+@media (max-width: 360px) {
+
+  .wcert-section {
+    padding: 36px 10px;
+  }
+
+  .wcert-header h2 {
+    font-size: 22px;
+  }
+
+  .wcert-header p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .wcert-cards {
+    height: 240px;
+  }
+
+  .wcert-far-left {
+    width: 70px;
+    height: 130px;
+    left: 0;
+    transform: translateY(-50%) rotate(-10deg);
+  }
+
+  .wcert-near-left {
+    width: 105px;
+    height: 180px;
+    left: 42px;
+    transform: translateY(-50%) rotate(-5deg);
+  }
+
+  .wcert-center {
+    width: 135px;
+    height: 210px;
+  }
+
+  .wcert-near-right {
+    width: 105px;
+    height: 180px;
+    right: 42px;
+    transform: translateY(-50%) rotate(5deg);
+  }
+
+  .wcert-far-right {
+    width: 70px;
+    height: 130px;
+    right: 0;
+    transform: translateY(-50%) rotate(10deg);
+  }
+
+  /* popup */
+  .wcert-popup-image {
+    max-width: 92vw;
+    max-height: 78vh;
+    border-radius: 10px;
+  }
+
+  .wcert-close-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    top: -10px;
+    right: -10px;
+  }
+}

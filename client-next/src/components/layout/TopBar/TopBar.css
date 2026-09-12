@@ -1,0 +1,124 @@
+.topbar {
+  width: 100%;
+  min-height: 42px;
+  background: #E31C1C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: 'Host Grotesk', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+}
+
+.topbar-text {
+  color: #fff;
+  font-size: 14px;
+  margin: 0;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Host Grotesk', sans-serif;
+}
+
+.topbar-text::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  min-width: 6px;
+  background: #fff;
+  border-radius: 50%;
+  /* animation: blink 1s infinite; */
+}
+
+.topbar-desktop {
+  display: flex;
+  justify-content: center;
+}
+
+.topbar-mobile {
+  display: none;
+}
+
+.topbar-btn {
+  flex-shrink: 0;
+  background: #fff;
+  color: #E31C1C;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: 'Host Grotesk', sans-serif;
+  transition: background 0.25s ease;
+}
+
+.topbar-btn:hover {
+  background: #ffeaea;
+}
+
+@keyframes scrollText {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    justify-content: space-between;
+    padding: 0 10px 0 0;
+    min-height: 38px;
+  }
+
+  .topbar-desktop { display: none; }
+
+  .topbar-mobile {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    align-items: center;
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 80%, transparent 100%);
+  }
+
+  .topbar-track {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: max-content;
+    animation: scrollText 12s linear infinite;
+    will-change: transform;
+  }
+
+  .topbar-text { font-size: 12px; }
+  .topbar-btn { font-size: 11px; padding: 5px 10px; margin-left: 8px; }
+}
+
+@media (max-width: 480px) {
+  .topbar-text { font-size: 11px; }
+  .topbar-btn { font-size: 10px; padding: 4px 8px; }
+  .topbar-track { gap: 24px; animation-duration: 10s; }
+}
+
+@media (max-width: 360px) {
+  .topbar-text { font-size: 10px; }
+  .topbar-btn { font-size: 10px; padding: 4px 7px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .topbar-track { animation: none; }
+  .topbar-text::before { animation: none; }
+}

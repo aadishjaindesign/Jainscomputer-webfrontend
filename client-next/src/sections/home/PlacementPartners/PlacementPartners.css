@@ -1,0 +1,183 @@
+/* ================= WRAPPER ================= */
+
+.placement-wrapper {
+  background: #ffffff;
+  padding: 20px 100px;
+  text-align: center;
+  font-family: "Host Grotesk", sans-serif;
+  overflow: hidden;
+}
+
+/* ================= HEADING ================= */
+
+.placement-title {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.placement-title span {
+  color: #e31c1c;
+}
+
+/* ================= SCROLL AREA ================= */
+
+.network-scroll {
+  width: 100%;
+  overflow: hidden; /* JS handles scroll on mobile, CSS animation on desktop */
+  cursor: default;
+
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+}
+
+/* ================= TRACK ================= */
+
+.scrolle-track {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: max-content;
+  padding: 12px 0;
+
+  animation: scrollLeft 60s linear infinite;
+  will-change: transform;
+}
+
+/* Pause animation on hover — desktop only */
+@media (min-width: 1025px) {
+  .network-scroll:hover .scrolle-track {
+    animation-play-state: paused;
+  }
+}
+
+/* ================= INFINITE SCROLL KEYFRAME ================= */
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ================= CARD ================= */
+
+.company-card {
+  width: 240px;
+  height: 90px;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  padding: 14px;
+  transition: all 0.3s ease;
+}
+
+.company-card:hover {
+  transform: scale(1.06);
+  border-color: #e31c1c;
+}
+
+/* ================= LOGO ================= */
+
+.company-logo {
+  max-width: 100%;
+  max-height: 90px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.company-card:hover .company-logo {
+  transform: scale(1.03);
+}
+
+/* ========================================================= */
+/* ====================== MOBILE =========================== */
+/* ========================================================= */
+
+@media (max-width: 480px) {
+  .placement-wrapper {
+    padding: 20px 14px;
+  }
+
+  .placement-title {
+    font-size: 26px;
+  }
+
+  /* On mobile: disable CSS animation — JS takes over */
+  .scrolle-track {
+    animation: none !important;
+    gap: 14px;
+  }
+
+  .company-card {
+    width: 180px;
+    height: 85px;
+    border-radius: 12px;
+    padding: 10px;
+  }
+
+  .company-logo {
+    max-height: 75px;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 360px) {
+  .placement-title {
+    font-size: 22px;
+  }
+
+  .company-card {
+    width: 115px;
+    height: 54px;
+  }
+}
+
+/* ================= TABLET ================= */
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .placement-wrapper {
+    padding: 40px 30px;
+  }
+
+  .placement-title {
+    font-size: 34px;
+  }
+
+  /* On tablet: disable CSS animation — JS takes over */
+  .scrolle-track {
+    animation: none !important;
+    gap: 18px;
+  }
+
+  .company-card {
+    width: 130px;
+    height: 60px;
+  }
+
+  .company-logo {
+    max-height: 38px;
+  }
+}

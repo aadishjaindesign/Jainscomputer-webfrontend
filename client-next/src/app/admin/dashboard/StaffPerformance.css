@@ -1,0 +1,216 @@
+.sp-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sp-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #111;
+  margin: 0;
+}
+
+.sp-refresh {
+  padding: 8px 16px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 13px;
+  font-family: 'Host Grotesk', sans-serif;
+  cursor: pointer;
+  color: #555;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.sp-refresh:hover {
+  background: #f5f5f5;
+  border-color: #ccc;
+}
+
+.sp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.sp-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.25s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.sp-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-color: #ddd;
+}
+
+.sp-card-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.sp-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  font-family: 'Host Grotesk', sans-serif;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.sp-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.sp-card-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 2px;
+}
+
+.sp-card-last {
+  font-size: 12px;
+  color: #999;
+}
+
+.sp-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.sp-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 4px;
+  background: #fafafa;
+  border-radius: 10px;
+}
+
+.sp-stat-value {
+  font-size: 18px;
+  font-weight: 800;
+  color: #E31C1C;
+  line-height: 1;
+}
+
+.sp-stat-value--green {
+  color: #16a34a;
+}
+
+.sp-stat-value--blue {
+  color: #0284c7;
+}
+
+.sp-stat-value--purple {
+  color: #8b5cf6;
+}
+
+.sp-stat-value--orange {
+  color: #f97316;
+}
+
+.sp-stat-value--teal {
+  color: #14b8a6;
+}
+
+.sp-stat-label {
+  font-size: 10px;
+  color: #999;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sp-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px;
+  gap: 16px;
+  color: #888;
+}
+
+.sp-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #eee;
+  border-top-color: #E31C1C;
+  border-radius: 50%;
+  animation: spSpin 0.8s linear infinite;
+}
+
+@keyframes spSpin {
+  to { transform: rotate(360deg); }
+}
+
+.sp-error {
+  text-align: center;
+  padding: 40px;
+  color: #E31C1C;
+}
+
+.sp-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px;
+  gap: 8px;
+  color: #aaa;
+}
+
+.sp-empty span {
+  font-size: 36px;
+}
+
+@media (max-width: 768px) {
+  .sp-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+  }
+
+  .sp-card {
+    padding: 16px;
+  }
+
+  .sp-stat-value {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-card-name {
+    font-size: 14px;
+  }
+}

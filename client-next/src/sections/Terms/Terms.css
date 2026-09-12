@@ -1,0 +1,42 @@
+.policy {
+  font-family: 'Host Grotesk', sans-serif;
+  background: #f9f9f9;
+  padding: 60px 20px;
+}
+
+.policy-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.policy h1 {
+  font-size: 36px;
+  color: #E31C1C;
+  margin-bottom: 10px;
+}
+
+.policy .date {
+  margin-bottom: 20px;
+}
+
+.policy .intro {
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.policy h2 {
+  color: #E31C1C;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.policy ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.policy ul li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
