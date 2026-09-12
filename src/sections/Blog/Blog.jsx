@@ -2,15 +2,34 @@
 
 import "./Blog.css";
 
+import { useState, useEffect } from "react";
+
 import Link from "next/link";
 
-import { blogs } from "@/data/blogsData";
+import { getAllBlogs } from "@/services/blogService";
 
 import { usePopup } from "@/context/PopupContext";
 
 const Events = () => {
 
   const { openPopup } = usePopup();
+
+  const [allBlogs, setAllBlogs] = useState([]);
+
+  useEffect(() => {
+
+    let cancelled = false;
+
+    getAllBlogs()
+      .then((docs) => {
+        if (!cancelled) setAllBlogs(docs);
+      })
+      .catch(() => {});
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   return (
 
@@ -42,64 +61,66 @@ const Events = () => {
 
       </div>
 
-      <div className="events-grid">
+      {allBlogs.length > 0 && (
+        <div className="events-grid">
 
-        {blogs.map((item, index) => (
+          {allBlogs.map((item, index) => (
 
-          <Link
-            href={`/blog/${item.id}`}
-            className="events-card"
-            key={index}
-          >
+            <Link
+              href={`/blog/${item.id}`}
+              className="events-card"
+              key={item.id || index}
+            >
 
-            <div className="events-img">
+              <div className="events-img">
 
-              <img
-                src={item.image.src}
-                alt={item.title}
-              />
+                {item.image?.src && (
+                  <img
+                    src={item.image.src}
+                    alt={item.title}
+                  />
+                )}
 
-              <span className="events-read-time">
-                5 min Read
-              </span>
-
-            </div>
-
-            <div className="events-body">
-
-              <span className="events-category">
-                {item.category}
-              </span>
-
-              <h3>
-                {item.title}
-              </h3>
-
-              <p>
-                {item.desc}
-              </p>
-
-              <div className="events-footer">
-
-                <span>
-                  {item.date}
-                </span>
-
-                <span>
-                  Read More →
+                <span className="events-read-time">
+                  {item.readingTime} min Read
                 </span>
 
               </div>
 
-            </div>
+              <div className="events-body">
 
-          </Link>
+                <span className="events-category">
+                  {item.category}
+                </span>
 
-        ))}
+                <h3>
+                  {item.title}
+                </h3>
 
-      </div>
+                <p>
+                  {item.desc}
+                </p>
 
-      {/* BLOG PAGE CTA */}
+                <div className="events-footer">
+
+                  <span>
+                    {item.date}
+                  </span>
+
+                  <span>
+                    Read More →
+                  </span>
+
+                </div>
+
+              </div>
+
+            </Link>
+
+          ))}
+
+        </div>
+      )}
 
       {/* BLOG PAGE CTA */}
       <div className="events-cta">

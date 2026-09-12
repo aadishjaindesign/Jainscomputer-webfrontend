@@ -54,7 +54,7 @@ const faqs = [
   },
   {
     question: "Who should I contact for urgent queries?",
-    answer: "You can call or WhatsApp us at +91-9829498998 or email us at contact@jainscomputer.com to get immediate assistance in case of urgency."
+    answer: "You can call or WhatsApp us at +91-9571406998  or email us at contact@jainscomputer.com to get immediate assistance in case of urgency."
   }
 ];
 
@@ -217,7 +217,7 @@ const Contact = () => {
 
             <div className="info-text">
               <span>Call Us AnyTime</span>
-              <strong>+91-9829498998</strong>
+              <strong>+91-9571406998 </strong>
             </div>
 
           </div>

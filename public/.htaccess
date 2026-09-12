@@ -63,6 +63,31 @@ Redirect 301 /WhyChooseUs /why-choose-us/
 
 # =====================================
 
+# =====================================
+# ADDITIONAL OLD URL REDIRECTS
+# =====================================
+
+Redirect 301 /about-us /why-choose-us/
+Redirect 301 /about-us.html /why-choose-us/
+Redirect 301 /about.html /why-choose-us/
+
+Redirect 301 /contact.html /contact/
+
+Redirect 301 /digitalmarketing.html /courses/digital-marketing/
+Redirect 301 /webdesigning.html /courses/website-design/
+Redirect 301 /graphicdesigning.html /courses/graphic-designing/
+Redirect 301 /androidprogramming.html /courses/programming/
+
+Redirect 301 /home /
+Redirect 301 /index /
+
+Redirect 301 /privacypolicy.html /privacy-policy/
+
+Redirect 301 /courses.html /courses/
+Redirect 301 /gallery.html /gallery/
+
+Redirect 301 /courses/dataanalytics /courses/data-analytics/
+
 # OTHER OLD URLS
 
 # =====================================

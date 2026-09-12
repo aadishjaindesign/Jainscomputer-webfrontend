@@ -6,6 +6,8 @@ import LeadsTable from "../leads/LeadsTable";
 import CertificateAdd from "./CertificateAdd";
 import CertificateTable from "./CertificateTable";
 import DashboardHome from "./DashboardHome";
+import StaffPerformance from "./StaffPerformance";
+import StaffDetails from "./StaffDetails";
 import Settings from "../settings/Settings";
 import Image from "next/image";
 import logo from "@/assets/logo/Logo.svg";
@@ -18,6 +20,7 @@ const AdminDashboard = () => {
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("dashboard");
+  const [selectedStaff, setSelectedStaff] = useState(null);
 
   const router = useRouter();
 
@@ -31,6 +34,7 @@ const AdminDashboard = () => {
     { key: "add-certificate", icon: "🎓", label: "Add Certificate" },
     { key: "all-certificates", icon: "📋", label: "All Certificates" },
     { key: "leads", icon: "👥", label: "Leads" },
+    { key: "staff-performance", icon: "⭐", label: "Staff Performance" },
     { key: "settings", icon: "⚙️", label: "Settings" },
   ];
 
@@ -39,6 +43,7 @@ const AdminDashboard = () => {
     "add-certificate": { title: "Add Certificate", sub: "Add new student certificate" },
     "all-certificates": { title: "All Certificates", sub: "View and manage all certificates" },
     "leads": { title: "Leads", sub: "Manage all your leads" },
+    "staff-performance": { title: "Staff Performance", sub: "View staff performance metrics" },
     "settings": { title: "Settings", sub: "Admin settings" },
   };
 
@@ -144,6 +149,18 @@ const AdminDashboard = () => {
 
         {activeSection === "leads" && (
           <LeadsTable />
+        )}
+
+        {activeSection === "staff-performance" && (
+          <>
+            <StaffPerformance onSelectStaff={setSelectedStaff} />
+            {selectedStaff && (
+              <StaffDetails
+                staff={selectedStaff}
+                onClose={() => setSelectedStaff(null)}
+              />
+            )}
+          </>
         )}
 
         {activeSection === "settings" && (

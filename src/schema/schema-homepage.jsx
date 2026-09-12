@@ -49,7 +49,7 @@ export function OrganizationSchema() {
           "longitude": 75.7528809
         },
         "hasMap": "https://www.google.com/maps?q=26.9428365,75.7528809",
-        "telephone": "+91-9829498998",
+        "telephone": "+91-9571406998 ",
         "email": "contact@jainscomputer.com",
         "openingHoursSpecification": [
           {
@@ -119,7 +119,7 @@ export function HomepageFAQSchema() {
         "name": "How to take admission at Jains Computer, Jhotwara?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You can enroll by visiting our institute at 13A, Shivpuri, Indrapura, Jhotwara, Jaipur or by contacting us online at contact@jainscomputer.com or calling +91-9829498998. Our team will guide you through the steps to choose the right course."
+          "text": "You can enroll by visiting our institute at 13A, Shivpuri, Indrapura, Jhotwara, Jaipur or by contacting us online at contact@jainscomputer.com or calling +91-9571406998 . Our team will guide you through the steps to choose the right course."
         }
       },
       {
@@ -151,7 +151,7 @@ export function HomepageFAQSchema() {
         "name": "What are the fees for courses at Jains Computer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Course fees vary depending on the course and duration selected. Flexible EMI and installment payment options are available. Contact us at +91-9829498998 or visit our institute in Jhotwara, Jaipur for a detailed fee breakdown."
+          "text": "Course fees vary depending on the course and duration selected. Flexible EMI and installment payment options are available. Contact us at +91-9571406998  or visit our institute in Jhotwara, Jaipur for a detailed fee breakdown."
         }
       },
       {

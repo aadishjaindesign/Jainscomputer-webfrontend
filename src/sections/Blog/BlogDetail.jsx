@@ -1,27 +1,45 @@
 "use client";
 
-// import { useParams } from "next/navigation";
+import { useState, useEffect } from "react";
 
 import Link from "next/link";
-
-// import { blogs } from "@/data/blogsData";
+import { useRouter } from "next/navigation";
 
 import "./BlogDetail.css";
+
+import { getCategories } from "@/services/categoryService";
 
 import { usePopup } from "@/context/PopupContext";
 
 const BlogDetail = ({ blog, relatedBlogs }) => {
 
-  // const params = useParams();
-
-
-  // const slug = Array.isArray(params.slug)
-  //   ? params.slug[0]
-  //   : params.slug;
+  const router = useRouter();
 
   const { openPopup } = usePopup();
 
-  // const blog = blogs.find((b) => b.id === slug);
+  const [categories, setCategories] = useState([]);
+  const [searchText, setSearchText] = useState("");
+
+  useEffect(() => {
+    let cancelled = false;
+
+    getCategories()
+      .then((items) => {
+        if (!cancelled) setCategories(items);
+      })
+      .catch(() => {});
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const handleSearch = (event) => {
+    if (event.key !== "Enter") return;
+    const query = searchText.trim();
+    if (!query) return;
+    router.push(`/blog?search=${encodeURIComponent(query)}`);
+  };
 
   if (!blog)
     return (
@@ -29,8 +47,6 @@ const BlogDetail = ({ blog, relatedBlogs }) => {
         Blog not found
       </div>
     );
-
-  // const related = blogs.filter((b) => b.id !== slug).slice(0, 3);
 
   return (
 
@@ -73,17 +89,19 @@ const BlogDetail = ({ blog, relatedBlogs }) => {
           </h1>
 
           <p className="bd-meta">
-            {blog.date} &nbsp;|&nbsp; 5 min read
+            {blog.date} &nbsp;|&nbsp; {blog.readingTime} min read
           </p>
 
           {/* Big Image */}
 
           <div className="bd-hero-img">
 
-            <img
-              src={blog.image.src}
-              alt={blog.title}
-            />
+            {blog.image?.src && (
+              <img
+                src={blog.image.src}
+                alt={blog.title}
+              />
+            )}
 
           </div>
 
@@ -102,7 +120,23 @@ const BlogDetail = ({ blog, relatedBlogs }) => {
 
           {/* Search */}
 
+          <div className="bd-sidebar-box">
 
+            <h4>
+              Search
+            </h4>
+
+            <input
+              type="search"
+              className="bd-search"
+              placeholder="Search blogs..."
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+              onKeyDown={handleSearch}
+              aria-label="Search blogs"
+            />
+
+          </div>
 
           {/* Categories */}
 
@@ -114,29 +148,13 @@ const BlogDetail = ({ blog, relatedBlogs }) => {
 
             <ul>
 
-              <li>
-                <Link href="/courses/graphic-designing">
-                  ✦ Graphic Design
-                </Link>
-              </li>
-
-              <li>
-                <Link href="/courses/digital-marketing">
-                  ✦ Digital Marketing
-                </Link>
-              </li>
-
-              <li>
-                <Link href="/courses/video-editing">
-                  ✦ Video Editing
-                </Link>
-              </li>
-
-              <li>
-                <Link href="/courses/artificial-intelligence">
-                  ✦ Artificial Intelligence
-                </Link>
-              </li>
+              {categories.map((category) => (
+                <li key={category.slug || category.id}>
+                  <Link href={category.courseSlug ? `/courses/${category.courseSlug}/` : `/blog?category=${encodeURIComponent(category.slug || category.name)}`}>
+                    ✦ {category.name}
+                  </Link>
+                </li>
+              ))}
 
             </ul>
 
@@ -153,10 +171,12 @@ const BlogDetail = ({ blog, relatedBlogs }) => {
             {relatedBlogs.map((item) => (
               <Link href={`/blog/${item.id}`} className="bd-recent-post" key={item.id}>
 
-                <img
-                  src={item.image.src}
-                  alt={item.title}
-                />
+                {item.image?.src && (
+                  <img
+                    src={item.image.src}
+                    alt={item.title}
+                  />
+                )}
 
                 <p>
                   {item.title}

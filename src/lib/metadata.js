@@ -68,14 +68,14 @@ export const coursesPageMetadata = {
 
 export const contactPageMetadata = {
   title: "Contact Jains Computer | Admissions & Enquiry Jaipur",
-  description: "Visit us at Jhotwara, Jaipur or call +91-9829498998. Enquire about admissions, courses, EMI options & free career counselling. We're open Mon–Sat, 8 AM–8 PM.",
+  description: "Visit us at Jhotwara, Jaipur or call +91-9571406998 . Enquire about admissions, courses, EMI options & free career counselling. We're open Mon–Sat, 8 AM–8 PM.",
   keywords: ["contact Jains Computer Jaipur", "computer institute admission Jhotwara", "enroll computer course Jaipur"],
   alternates: {
     canonical: "https://jainscomputer.com/contact/",
   },
   openGraph: {
     title: "Contact Jains Computer | Admissions & Enquiry Jaipur",
-    description: "Visit us at Jhotwara, Jaipur or call +91-9829498998. Enquire about admissions, courses, EMI options & free career counselling. We're open Mon–Sat, 8 AM–8 PM.",
+    description: "Visit us at Jhotwara, Jaipur or call +91-9571406998 . Enquire about admissions, courses, EMI options & free career counselling. We're open Mon–Sat, 8 AM–8 PM.",
     url: "https://jainscomputer.com/contact/",
     siteName: "Jains Computer",
     images: [
@@ -91,7 +91,7 @@ export const contactPageMetadata = {
   twitter: {
     card: "summary_large_image",
     title: "Contact Jains Computer | Admissions & Enquiry Jaipur",
-    description: "Visit us at Jhotwara, Jaipur or call +91-9829498998. Enquire about admissions, courses, EMI options & free career counselling.",
+    description: "Visit us at Jhotwara, Jaipur or call +91-9571406998 . Enquire about admissions, courses, EMI options & free career counselling.",
     images: [
       "https://jainscomputer.com/og-contact.jpg",
     ],

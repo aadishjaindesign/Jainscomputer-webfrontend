@@ -131,7 +131,7 @@ const Footer = () => {
 
           <p className="footer-item">
             <img src={callIcon.src} alt="" />
-            +91-9829498998
+            +91-9571406998 
           </p>
 
           <div className="footer-social">

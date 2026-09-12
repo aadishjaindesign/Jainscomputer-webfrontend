@@ -99,7 +99,7 @@ const PrivacyPolicy = () => {
           </li>
 
           <li>
-            📞 Phone: 9829498998, 6377075972
+            📞 Phone: 9571406998 , 6377075972
           </li>
 
           <li>

@@ -1,6 +1,42 @@
+import { getAllBlogs } from "@/services/blogService";
+
 export const dynamic = "force-static";
 
-export default function sitemap() {
+const BLOG_LAST_MODIFIED = "2026-05-27T09:53:04+00:00";
+
+const fallbackBlogSlugs = [
+  "digital-marketing-demand-jaipur",
+  "coding-classes-jaipur-beginners-guide",
+  "jains-vs-digital-marketing-institutes-jaipur",
+  "digital-marketing-guide",
+  "choose-right-computer-classes-jaipur",
+  "graphic-design-vs-web-design-career",
+  "top-skills-digital-marketing-course-jaipur",
+  "career-scope-video-editing-courses-2026",
+  "best-tally-institute-jaipur-key-factors",
+  "cad-training-jaipur-classroom-experience",
+];
+
+export default async function sitemap() {
+
+  let blogSlugs = fallbackBlogSlugs;
+
+  try {
+    const blogs = await getAllBlogs();
+    if (Array.isArray(blogs) && blogs.length > 0) {
+      blogSlugs = blogs
+        .map((blog) => blog.slug || blog.id)
+        .filter(Boolean);
+    }
+  } catch {
+    // keep the fallback list
+  }
+
+  const blogEntries = blogSlugs.map((slug) => ({
+    url: `https://jainscomputer.com/blog/${slug}/`,
+    lastModified: BLOG_LAST_MODIFIED,
+    priority: 0.64,
+  }));
 
   return [
 
@@ -118,65 +154,7 @@ export default function sitemap() {
       priority: 0.80,
     },
 
-    {
-      url: "https://jainscomputer.com/blog/digital-marketing-demand-jaipur/",
-      lastModified: "2026-05-27T09:53:04+00:00",
-      priority: 0.64,
-    },
-
-    {
-      url: "https://jainscomputer.com/blog/coding-classes-jaipur-beginners-guide/",
-      lastModified: "2026-05-27T09:53:04+00:00",
-      priority: 0.64,
-    },
-
-    {
-      url: "https://jainscomputer.com/blog/jains-vs-digital-marketing-institutes-jaipur/",
-      lastModified: "2026-05-27T09:53:04+00:00",
-      priority: 0.64,
-    },
-
-    {
-      url: "https://jainscomputer.com/blog/digital-marketing-guide/",
-      lastModified: "2026-05-27T09:53:04+00:00",
-      priority: 0.64,
-    },
-
-    {
-      url: "https://jainscomputer.com/blog/choose-right-computer-classes-jaipur/",
-      lastModified: "2026-05-27T09:53:04+00:00",
-      priority: 0.64,
-    },
-
-    {
-      url: "https://jainscomputer.com/blog/graphic-design-vs-web-design-career/",
-      lastModified: "2026-05-27T09:53:04+00:00",
-      priority: 0.64,
-    },
-
-    {
-      url: "https://jainscomputer.com/blog/top-skills-digital-marketing-course-jaipur/",
-      lastModified: "2026-05-27T09:53:04+00:00",
-      priority: 0.64,
-    },
-
-    {
-      url: "https://jainscomputer.com/blog/career-scope-video-editing-courses-2026/",
-      lastModified: "2026-05-27T09:53:04+00:00",
-      priority: 0.64,
-    },
-
-    {
-      url: "https://jainscomputer.com/blog/best-tally-institute-jaipur-key-factors/",
-      lastModified: "2026-05-27T09:53:04+00:00",
-      priority: 0.64,
-    },
-
-    {
-      url: "https://jainscomputer.com/blog/cad-training-jaipur-classroom-experience/",
-      lastModified: "2026-05-27T09:53:04+00:00",
-      priority: 0.64,
-    },
+    ...blogEntries,
 
     {
       url: "https://jainscomputer.com/pdf/Jains-Computer-Course-Catalogue.pdf",
